@@ -21,6 +21,12 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Will return from the cache if previously assigned
 ## x - a makeCacheMatrix object
 ## Return a matrix that is the inverse of the matrix in 'x'
+##
+## Ex. 
+##a <- matrix(c(9,1,3,6,13,11,7,0,5,7,4,7,2,6,1,10),4,4)
+##b <- makeCacheMatrix(a)
+##c <- cacheSolve(b) builds the inverted matrix, loads to cache and returns it
+##d <- cacheSolve(b) returns inverted matrix from cache
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
   if(!is.null(i)) {
